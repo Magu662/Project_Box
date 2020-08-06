@@ -17,3 +17,7 @@ def action():
         led.value = 0.25
         sleep(1)
     led.value = 0
+while True:
+        button.when_pressed = action
+
+
