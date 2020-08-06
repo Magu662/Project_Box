@@ -1,7 +1,7 @@
 
 from imapclient import IMAPClient
 mail = IMAPClient('imap.gmail.com', ssl=True, port=993)
-mail.login("maxs.raspi@gmail.com", "MaxsPi2020")
+mail.login("test@gmail.com", "password")
 totalMail = mail.select_folder('Inbox')
 #Shows how many messages are there - both read and unread
 print('You have total %d messages in your folder' % totalMail[b'EXISTS'])
