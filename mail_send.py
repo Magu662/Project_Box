@@ -3,8 +3,8 @@ import smtplib
 #Email Variables
 SMTP_SERVER = 'smtp.gmail.com' #Email Server (don't change!)
 SMTP_PORT = 587 #Server Port (don't change!)
-GMAIL_USERNAME = 'maxs.raspi@gmail.com' #change this to match your gmail account
-GMAIL_PASSWORD = 'MaxsPi2020'  #change this to match your gmail password
+GMAIL_USERNAME = 'test@gmail.com' #change this to match your gmail account
+GMAIL_PASSWORD = 'password'  #change this to match your gmail password
 
 class Emailer:
     def sendmail(self, recipient, subject, content):
@@ -17,4 +17,23 @@ class Emailer:
         #Connect to Gmail Server
         session = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         session.ehlo()
+        session.starttls()
+        session.ehlo()
+
+        #Login to Gmail
+        session.login(GMAIL_USERNAME, GMAIL_PASSWORD)
+
+        #Send Email & Exit
+        session.sendmail(GMAIL_USERNAME, recipient, headers + "\r\n\r\n" + cont$
+        session.quit
+
+sender = Emailer()
+
+sendTo = 'justine.raspi@gmail.com'
+emailSubject = "Action"
+emailContent = "This is a test of my Emailer Class"
+
+#Sends an email to the "sendTo" address with the specified "emailSubject" as th$
+sender.sendmail(sendTo, emailSubject, emailContent)
+
                              
